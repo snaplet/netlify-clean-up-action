@@ -1,0 +1,12 @@
+name: Netlify Preview Deployments
+
+author: Snaplet
+
+description: Delete environment variables set by the Snaplet Netlify plugin
+
+runs:
+  using: composite
+  steps:
+    - name: Delete
+      shell: bash
+      run: node --experimental-fetch --no-warnings ${{ github.action_path }}/scripts/delete.mjs
