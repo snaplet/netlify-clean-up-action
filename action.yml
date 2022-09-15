@@ -1,8 +1,15 @@
-name: Netlify Preview Deployments
+name: Netlify Clean-up Contexts
 
 author: Snaplet
 
-description: Delete environment variables set by the Snaplet Netlify plugin
+description: Delete environment variables in branch-deploy contexts
+
+inputs:
+  databaseEnvVar:
+    description: Environment variables name associated with database connection string
+    required: false
+    type: string
+    default: "DATABASE_URL"
 
 runs:
   using: composite
